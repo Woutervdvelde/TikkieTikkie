@@ -20,20 +20,20 @@
 <body>
     <div class="container">
         <div class="header-logo">
-            <span>Pay with</span>
-            <img src="assets/image/logo-tikkie.png" alt="tikkie"/>
+            <span>Remind with</span>
+            <img src="assets/image/logo-tikkietikkie.png" alt="tikkie"/>
         </div>
         <div class="card">
             <div class="card-top">
-                <h2 class="title">Dinner</h2>
+                <h2 class="title" id="description">Dinner</h2>
                 <h3 class="name">
                     <span>To</span>
-                    <span>Wouter</span>
+                    <span id="name"></span>
                 </h3>
                 <div>
                     <div class="currency-input">
                         <span>€</span>
-                        <input inputmode="decimal" placeholder="0,00">
+                        <input inputmode="decimal" placeholder="0,00" id="amount">
                     </div>
                     <div class="custom-amount">
                         <p>
@@ -42,12 +42,14 @@
                         </p>
                     </div>
                 </div>
-                <button>
-                    <div>
-                        <img src="assets/image/tikkie-circle.png" alt="tikkie logo"/>
-                        <span>Open Tikkie</span>
-                    </div>
-                </button>
+                <a href="tikkie://payment/create">
+                    <button>
+                        <div>
+                            <img src="assets/image/tikkie-circle.png" alt="tikkie logo"/>
+                            <span>Open Tikkie</span>
+                        </div>
+                    </button>
+                </a>
             </div>
             <div class="card-bottom">
                 <div class="container">
@@ -101,6 +103,7 @@
         </div>
     </div>
 
+    <script src="scripts/data.js"></script>
     <script src="scripts/encryption.js"></script>
     <script src="scripts/pay.js"></script>
 </body>
