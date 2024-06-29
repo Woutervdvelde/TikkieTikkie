@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pay.css">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <title>TikkieTikkie</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header-logo">
+            <span>Pay with</span>
+            <img src="assets/image/logo-tikkie.png" alt="tikkie"/>
+        </div>
+        <div class="card">
+            <div class="card-top">
+                <h2 class="title">Dinner</h2>
+                <h3 class="name">
+                    <span>To</span>
+                    <span>Wouter</span>
+                </h3>
+                <div class="currency-input">
+                    <span>€</span>
+                    <input inputmode="decimal" placeholder="0,00">
+                </div>
+                <button>
+                    <div>
+                        <img src="assets/image/tikkie-circle.png" alt="tikkie logo"/>
+                        <span>Open Tikkie</span>
+                    </div>
+                </button>
+            </div>
+            <div class="card-bottom">
+                <div class="container">
+                    <span>By using Tikkie, you accept the</span>
+                    <br>
+                    <a href="https://www.tikkie.me/gebruiksvoorwaarden">Terms of use</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq">
+            <h2>Any questions?</h2>
+
+            <div class="item">
+                <h3>How does it work?</h3>
+                <div class="content">
+                    <p>You can quickly create a tikkie in a few steps:</p>
+                    <ol>
+                        <li>Press the 'Open Tikkie' button</li>
+                        <li>Done! Piece of cake, right?</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="item">
+                <h3>Is TikkieTikkie available to everyone?</h3>
+                <div class="content">
+                    <p>Yes, any user can use TikkieTikkie to remind someone to send a tikkie</p>
+                </div>
+            </div>
+            <div class="item">
+                <h3>Is TikkieTikkie secure?</h3>
+                <div class="content">
+                    <p>TikkieTikkie is powered by coffee and uses encryption to secure your information. The link starts with https. This means that your data are encrypted. Please <a href="https://buymeacoffee.com/woutervdvelde
+                        ">support coffee</a>.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <h3>Is it free?</h3>
+                <div class="content">
+                    <p>We do not charge fees for tikkies created through TikkieTikkie</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <h3>Support coffee</h3>
+                <div class="content">
+                    <p>Like using TikkieTikkie? Consider <a href="https://buymeacoffee.com/woutervdvelde">supporting with coffee</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const items = Array.from(document.querySelector(".faq").querySelectorAll(".item"))
+        items.forEach(item => {
+            const h3 = item.querySelector("h3");
+            h3.onclick = () => {
+                item.classList.toggle("active")
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+.header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+}
+
+.header-logo span {
+    opacity: .4;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.header-logo img {
+    height: 23px;
+}
+
+.card {
+    width: 100%;
+    background-color: var(--on-background);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 5px 38px -5px;
+}
+
+.card-top{
+    padding: 0px 24px;
+}
+
+.card-top .title {
+    padding-top: 24px;
+}
+
+.card-top .name {
+    margin: 4px 0;
+}
+
+.card-top .currency-input {
+    padding: 8px 0px 12px;
+}
+
+.card-top .currency-input span {
+    font-size: 48px;
+}
+
+.card-top .currency-input input {
+    flex-grow: 1;
+    margin-left: 10px;
+    padding: 2px;
+    width: 250px;
+    line-height: 1.26;
+    font-size: 48px;
+    border: none;
+    background: none;
+    color: rgb(255, 255, 255);
+    font-family: MuseoSansRounded, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    caret-color: var(--accent);
+    user-select: none;
+    pointer-events: none;
+}
+
+.card-top .currency-input input::placeholder {
+    color: var(--text);
+    opacity: .2;
+}
+
+.card-top .currency-input input:focus {
+    outline: var(--text) solid 1px;
+}
+
+.card-top button {
+    width: 100%;
+    margin: 12px 0px;
+    background-color: var(--accent);
+    border: 0px;
+    height: 48px;
+    border-radius: 45px;
+    box-shadow: rgba(34, 35, 40, 0.44) 0px 8px 20px -6px;
+    cursor: pointer;
+}
+
+.card-top button div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-top button div img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.card-top button div span {
+    font-family: MuseoSansRounded, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    color: var(--text);
+}
+
+.card-bottom {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0 0 10px 10px;
+    margin-top: 24px;
+}
+
+.card-bottom > .container {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 24px 16px;
+}
+
+.card-bottom > .container span {
+    opacity: .6;
+}
+
+.faq {
+    margin-top: 36px;
+}
+
+.faq h2 {
+    font-size: 20px;
+    text-align: center;
+    margin: 3em 0 1em 0;
+}
+
+.faq .item {
+    background-color: rgba(255, 255, 255, .05);
+    border: rgba(255, 255, 255, .1) 2px solid;
+    border-radius: 8px;
+    padding: 1% 5%;
+    margin-bottom: 11px;
+    width: 100%;
+}
+
+.faq .item h3 {
+    padding: 10px 25px 10px 0px;
+    font-size: 1em;
+    position: relative;
+}
+
+.faq .item h3:hover {
+    cursor: pointer;
+}
+
+.faq .item h3::after {
+    content: "";
+    background-image: url("assets/image/arrow-down-white.svg");
+    background-size: 13px;
+    background-repeat: no-repeat;
+    background-position: 100% 16px;
+    position: absolute;
+    width: 15px;
+    height: 35px;
+    right: 0px;
+    top: 0px;
+    transition: all .3s ease 0s;
+    transform: rotate(0deg);
+}
+
+.faq .item.active h3::after {
+    transform: rotate(180deg);
+}
+
+.faq .item .content {
+    overflow: hidden;
+    visibility: hidden;
+    max-height: 0px;
+    transition: all .4s ease 0s;
+    color: var(--text-light);
+}
+
+.faq .item.active .content {
+    visibility: visible;
+    max-height: 200px;
+}
+
+.faq .item.active .content a {
+    color: var(--accent-light);
+}
+
+.faq .item .content ol {
+    margin-top: 20px;
+}
+
+.faq .item .content ol li {
+    list-style-position: inside;
+}

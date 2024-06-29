@@ -1,0 +1,71 @@
+@font-face {
+    font-family: "MuseoSansRounded";
+    src: url("assets/font/MuseoSansRounded700.otf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "MuseoSansRounded";
+    src: url("assets/font/MuseoSansRounded500.otf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "MuseoSansRounded";
+    src: url("assets/font/MuseoSansRounded300.otf");
+    font-weight: 300;
+}
+
+:root {
+    --background: #34346d;
+    --on-background: #6a6bd4;
+    --on-background-light: #797ad8;
+    --on-background-dark: #2a2a57;
+    --text: #ffffff;
+    --text-light: #9a9ab6;
+    --accent: #39a4a1;
+    --accent-light: #5ec2b9;;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    font-family: 'MuseoSansRounded';
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+body > .container {
+    margin: 0 auto;
+    max-width: 350px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+span {
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+ol {
+    list-style-type: decimal;
+}
