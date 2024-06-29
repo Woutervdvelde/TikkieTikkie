@@ -20,8 +20,35 @@
 
 <body>
     <div class="container">
-        
+        <div class="header-logo">
+            <span>Remind with</span>
+            <img src="assets/image/logo-tikkietikkie.png" alt="tikkie" />
+        </div>
+        <div class="section-container">
+            <div class="section">
+                <h2>What is your name?</h2>
+                <div class="name-input">
+                    <textarea type="text" id="name" placeholder="E.g. John Doe" maxlength="25"></textarea>
+                    <p>25</p>
+                </div>
+            </div>
+            <div class="section">
+                <h2>What's the amount?</h2>
+                <div class="amount-input">
+                    <span>€</span>
+                    <input inputmode="decimal" placeholder="0,00" id="amount">
+                </div>
+            </div>
+            <div class="section">
+                <h2>What is it for?</h2>
+                <div class="description-input">
+                    <textarea type="text" id="description" placeholder="E.g. Dinner" maxlength="35"></textarea>
+                    <p>35</p>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="scripts/create.js"></script>
 </body>
 
 </html>

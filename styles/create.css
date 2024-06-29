@@ -1,0 +1,57 @@
+.container {
+    overflow-x: hidden;
+    width: 350px;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+}
+
+.header-logo span {
+    opacity: .4;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.header-logo img {
+    height: 60px;
+}
+
+textarea, input {
+    width: 100%;
+    height: 250px;
+    margin: 12px 0px;
+    background: none;
+    color: var(--text);
+    border: none;
+    outline: none;
+    font-family: 'MuseoSansRounded';
+    font-size: 30px;
+    font-weight: 700;
+    resize: none;
+}
+
+.description-input p, .name-input p {
+    text-align: right;
+}
+
+.section-container {
+    position: relative;
+    width: 350px;
+    height: 500px;
+}
+
+.section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(120%);
+    transition: all .3s ease 0s;
+}
+
+.section.active {
+    transform: translateX(0);
+}
