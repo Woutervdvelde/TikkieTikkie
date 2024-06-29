@@ -68,6 +68,32 @@
     outline: var(--text) solid 1px;
 }
 
+.card-top .custom-amount {
+    box-shadow: rgba(0, 0, 0, 0.3) 0 4px 20px 0;
+    border-radius: 25px;
+    padding: 0px 16px;
+    background-color: var(--text);
+    color: var(--text-light);
+    width: fit-content;
+}
+
+.card-top .custom-amount p {
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 1.5rem;
+    position: relative;
+}
+
+.card-top .custom-amount p::after {
+    position: absolute;
+    bottom: -4px;
+    top: auto;
+    border: white 5px solid;
+    transform: rotate(45deg);
+    left: 42px;
+    content: "";
+}
+
 .card-top button {
     width: 100%;
     margin: 12px 0px;
