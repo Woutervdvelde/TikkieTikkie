@@ -1,18 +1,18 @@
 @font-face {
     font-family: "MuseoSansRounded";
-    src: url("assets/font/MuseoSansRounded700.otf");
+    src: url("../assets/font/MuseoSansRounded700.otf");
     font-weight: 700;
 }
 
 @font-face {
     font-family: "MuseoSansRounded";
-    src: url("assets/font/MuseoSansRounded500.otf");
+    src: url("../assets/font/MuseoSansRounded500.otf");
     font-weight: 500;
 }
 
 @font-face {
     font-family: "MuseoSansRounded";
-    src: url("assets/font/MuseoSansRounded300.otf");
+    src: url("../assets/font/MuseoSansRounded300.otf");
     font-weight: 300;
 }
 
@@ -69,4 +69,19 @@ a {
 
 ol {
     list-style-type: decimal;
+}
+
+button {
+    width: 100%;
+    margin: 12px 0px;
+    background-color: var(--accent);
+    color: var(--text);
+    border: 0px;
+    height: 48px;
+    border-radius: 45px;
+    box-shadow: rgba(34, 35, 40, 0.44) 0px 8px 20px -6px;
+    cursor: pointer;
+    font-family: 'MuseoSansRounded';
+    font-size: 20px;
+    font-weight: 700;
 }
