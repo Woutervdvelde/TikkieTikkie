@@ -25,7 +25,7 @@ textarea, input {
     height: 250px;
     margin: 12px 0px;
     background: none;
-    color: var(--text);
+    color: var(--accent);
     border: none;
     outline: none;
     font-family: 'MuseoSansRounded';
@@ -34,8 +34,14 @@ textarea, input {
     resize: none;
 }
 
+textarea::placeholder, input::placeholder {
+    color: var(--text);
+    opacity: .3;
+}
+
 .description-input p, .name-input p {
     text-align: right;
+    opacity: .3;
 }
 
 .section-container {
@@ -54,4 +60,32 @@ textarea, input {
 
 .section.active {
     transform: translateX(0);
+}
+
+.section .action-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.section .action-bar button {
+    transition: background-color .3s ease 0s;
+}
+
+.section .action-bar button:disabled {
+    background-color: var(--on-background-dark);
+}
+
+.section .action-bar button:disabled > * {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.section .action-bar .next {
+    width: fit-content;
+    height: fit-content;
+    padding: .5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
