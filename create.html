@@ -73,10 +73,16 @@
         </div>
 
         <div class="qrcode-modal">
+            <div class="close">
+                <space></space>
+                <span onclick="hideQrModal()"><img src="assets/image/close.svg"/></span>
+            </div>
+            <h2>QR code for the Tikkier</h2>
             <div class="qr-container">
                 <div id="qrcode"></div>
             </div>
-            <button onclick="hideQrModal()">Close</button>
+            <p>Have the Tikkier scan this QR code. This is useful if the Tikkier isn't one of your contacts. You can also first print the QR code.</p>
+            <button onclick="generateTikkieTikkie(TikkieTikkieType.SHARE)">Print or share</button>
         </div>
     </div>
 
