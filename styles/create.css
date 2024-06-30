@@ -22,7 +22,6 @@
 
 textarea, input {
     width: 100%;
-    height: 250px;
     margin: 12px 0px;
     background: none;
     color: var(--accent);
@@ -32,6 +31,10 @@ textarea, input {
     font-size: 30px;
     font-weight: 700;
     resize: none;
+}
+
+textarea {
+    height: 250px;
 }
 
 textarea::placeholder, input::placeholder {
@@ -60,6 +63,12 @@ textarea::placeholder, input::placeholder {
 
 .section.active {
     transform: translateX(0);
+}
+
+.section .amount-input {
+    display: flex;
+    align-items: center;
+    gap: .5em;
 }
 
 .section .action-bar {

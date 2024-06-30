@@ -20,19 +20,19 @@ const selectInput = () => {
     setTimeout(() => {
         const input = sections[currentSection].querySelector("input");
         if (input) input.focus();
-        const textarea = sections[currentSection].querySelector("textarea");
-        if (textarea) textarea.focus();
+        else {
+            const textarea = sections[currentSection].querySelector("textarea");
+            if (textarea) textarea.focus();
+        }
     }, 300);
 }
 
+// Used to handle input from textarea
 const initInputCounter = () => {
     const counter = sections[currentSection].querySelector(".max");
-    if (!counter) return;
-
     const input = sections[currentSection].querySelector("textarea");
-    if (!input) return;
-
     const nextButton = sections[currentSection].querySelector(".next");
+    if (!counter || !input) return;
 
     const max = input.getAttribute("maxlength");
     counter.textContent = max;
@@ -43,6 +43,7 @@ const initInputCounter = () => {
     });
 }
 
+// Used to handle input from decimal input
 const initAmountListener = () => {
     const input = sections[currentSection].querySelector("input");
     if (!input || input.inputMode != "decimal") return;
@@ -50,7 +51,14 @@ const initAmountListener = () => {
     const nextButton = sections[currentSection].querySelector(".next");
 
     input.addEventListener("input", () => {
+        // Replace all non-numeric characters with empty string and replace all dots with commas
         input.value = input.value.replace(/[^0-9,.]/g, "").replace(/\./g, ",");
+        // If the first character is a comma, add a 0 before it
+        if (input.value[0] == ",") input.value = `0${input.value}`
+        // If there are more than one comma remove all but the first one and round on two decimals
+        const parts = input.value.split(",");
+        input.value = `${parts[0]},${parts[1].slice(0, 2)}`
+
         nextButton.disabled = !input.value > 0;
     });
 }
