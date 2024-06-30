@@ -10,7 +10,7 @@ const params = new URLSearchParams(window.location.search);
 const data = params.get("data");
 
 if (!data) {
-    window.location.href = "/";
+    window.location.href = getBaseUrl();
 } else {
     const tikkie = TikkieTikkie.fromString(decode(data));
     document.getElementById("name").innerText = tikkie.name;
