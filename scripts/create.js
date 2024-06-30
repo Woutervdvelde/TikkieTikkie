@@ -115,8 +115,7 @@ const shareTikkieTikkie = (tikkietikkie) => {
     if (navigator.share) {
         navigator.share({
             title: "TikkieTikkie",
-            text: tikkietikkie.getShareMessage(),
-            // url: tikkietikkie.generateUrl()
+            text: tikkietikkie.getShareMessage()
         })
         .then(() => console.log("Successful share"))
         .catch((error) => {
@@ -143,7 +142,7 @@ const showQrModal = (link) => {
         height: 256,
         colorDark : "#000000",
         colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.H
+        correctLevel : QRCode.CorrectLevel.L
     });
 
     modal.classList.add("active");
