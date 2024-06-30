@@ -12,3 +12,17 @@
 .description {
     font-size: 24px;
 }
+
+.gif-container {
+    display: flex;
+    justify-content: center;
+}
+
+.gif-container .gif {
+    width: calc(var(--main-width) - 100px);
+    height: calc(var(--main-width) - 100px);
+    border-radius: 500px;
+    object-fit: cover;
+    border: 10px solid var(--on-background-dark);
+    margin: 1em 0;
+}

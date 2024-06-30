@@ -25,7 +25,10 @@
             <img src="assets/image/logo-tikkietikkie.png"/>
         </div>
         <div class="description">
-            TikkieTikkie has been created for that one friend who doesn't send a tikkie or just forgets it all the time. Use this to send them a gentle reminder.
+            TikkieTikkie has been created for that one friend who doesn't send a Tikkie or just forgets it all the time. Use this to send them a gentle reminder.
+        </div>
+        <div class="gif-container">
+            <img class="gif" src="assets/image/sendit/sendit-1.webp"/>
         </div>
         <a href="/create">
             <button>Send a TikkieTikkie</button>
@@ -34,6 +37,10 @@
     <script src="scripts/utils.js"></script>
     <script>
         document.querySelector("a").href = `${getBaseUrl()}/create`;
+
+        const gifsCount = 10;
+        const randomGif = Math.floor(Math.random() * gifsCount) + 1;
+        document.querySelector(".gif").src = `assets/image/sendit/sendit-${randomGif}.webp`;
     </script>
 </body>
 
