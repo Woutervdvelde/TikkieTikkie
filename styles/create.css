@@ -184,3 +184,31 @@ textarea::placeholder, input::placeholder {
     text-align: center;
     letter-spacing: .3px;
 }
+
+.toast-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.toast {
+    background-color: var(--accent);
+    width: var(--main-width);
+    text-align: center;
+    padding: 1em;
+    border-radius: 50px;
+    position: absolute;
+    bottom: -100%;
+    left: calc(100vw / 2 - var(--main-width) / 2);
+    transition: all .3s ease 0s;
+    opacity: 0;
+}
+
+.toast.active {
+    bottom: 2em;
+    opacity: 1;
+}

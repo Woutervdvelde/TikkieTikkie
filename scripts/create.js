@@ -110,7 +110,8 @@ const generateTikkieTikkie = (type = TikkieTikkieType.COPY) => {
 const coppyTikkieTikkie = (tikkietikkie) => {
     if (!tikkietikkie) return;
 
-    navigator.clipboard.writeText(tikkietikkie.getShareMessage())
+    navigator.clipboard.writeText(tikkietikkie.getShareMessage());
+    showToast("Link has been coppied!");
 };
 
 const showQrModal = (link) => {
@@ -135,6 +136,16 @@ const hideQrModal = () => {
     setTimeout(() => {
         modal.querySelector("#qrcode").innerHTML = "";
     }, 300);
+}
+
+const showToast = (message) => {
+    const toast = document.querySelector(".toast");
+    toast.innerHTML = message;
+    toast.classList.add("active");
+
+    setTimeout(() => {
+        toast.classList.remove("active");
+    }, 3000);
 }
 
 nextSection();
