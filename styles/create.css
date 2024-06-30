@@ -34,7 +34,7 @@ textarea, input {
 }
 
 textarea {
-    height: 250px;
+    height: 150px;
 }
 
 textarea::placeholder, input::placeholder {

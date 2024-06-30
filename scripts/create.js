@@ -21,10 +21,15 @@ const selectInput = () => {
     // Wait for CSS animation to finish
     setTimeout(() => {
         const input = sections[currentSection].querySelector("input");
-        if (input) input.focus();
-        else {
+        if (input) { 
+            input.focus();
+            input.trigger("focus");
+        } else {
             const textarea = sections[currentSection].querySelector("textarea");
-            if (textarea) textarea.focus();
+            if (textarea) {
+                textarea.focus();
+                textarea.trigger("focus");
+            }
         }
     }, 300);
 }
