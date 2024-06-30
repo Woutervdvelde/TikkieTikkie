@@ -116,7 +116,7 @@ const shareTikkieTikkie = (tikkietikkie) => {
         navigator.share({
             title: "TikkieTikkie",
             text: tikkietikkie.getShareMessage(),
-            url: tikkietikkie.generateUrl()
+            // url: tikkietikkie.generateUrl()
         })
         .then(() => console.log("Successful share"))
         .catch((error) => {
