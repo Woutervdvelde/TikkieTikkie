@@ -24,7 +24,9 @@
     --text: #ffffff;
     --text-light: #9a9ab6;
     --accent: #39a4a1;
-    --accent-light: #5ec2b9;;
+    --accent-light: #5ec2b9;
+
+    --main-width: 350px;
 }
 
 * {

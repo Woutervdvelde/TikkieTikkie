@@ -45,10 +45,11 @@ const initInputCounter = () => {
 
 // Used to handle input from decimal input
 const initAmountListener = () => {
-    const input = sections[currentSection].querySelector("input");
+    const section = sections[currentSection];
+    const input = section.querySelector("input");
+    const custom = section.querySelector("input[type=checkbox]");
+    const nextButton = section.querySelector(".next");
     if (!input || input.inputMode != "decimal") return;
-
-    const nextButton = sections[currentSection].querySelector(".next");
 
     input.addEventListener("input", () => {
         // Replace all non-numeric characters with empty string and replace all dots with commas
@@ -57,9 +58,29 @@ const initAmountListener = () => {
         if (input.value[0] == ",") input.value = `0${input.value}`
         // If there are more than one comma remove all but the first one and round on two decimals
         const parts = input.value.split(",");
-        input.value = `${parts[0]},${parts[1].slice(0, 2)}`
+        if (parts.length > 1) {
+            input.value = `${parts[0]},${parts[1].slice(0, 2)}`
+        } else {
+            input.value = parts[0];
+        }
 
         nextButton.disabled = !input.value > 0;
+    });
+
+    custom.addEventListener("change", () => {
+        if (custom.checked) {
+            input.setAttribute("readonly", true);
+            input.value = "Open amount";
+            nextButton.disabled = false;
+            section.querySelector(".amount-input h2").style.display = "none";
+        } else {
+            input.removeAttribute("readonly");
+            input.setAttribute("inputmode", "decimal");
+            input.value = "";
+            input.focus();
+            nextButton.disabled = true;
+            section.querySelector(".amount-input h2").style.display = "unset";
+        }
     });
 }
 
