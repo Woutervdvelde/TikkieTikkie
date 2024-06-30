@@ -77,6 +77,7 @@ textarea::placeholder, input::placeholder {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: .5em;
 }
 
 .section .action-bar button {
@@ -107,4 +108,18 @@ textarea::placeholder, input::placeholder {
     gap: .5em;
     font-size: 14px;
     font-weight: 500;
+}
+
+.section .action-bar .copy,
+.section .action-bar .qr,
+.section .action-bar .share {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section .action-bar .copy {
+    flex: 2 !important;
+    gap: .5em;
 }

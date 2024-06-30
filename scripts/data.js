@@ -9,6 +9,12 @@ class TikkieTikkie {
         return JSON.stringify(this);
     }
 
+    generateUrl() {
+        const data = encode(this.toString());
+        const base = getBaseUrl();
+        return `${base}/pay?data=${data}`;
+    }
+
     /**
      * Parses a string into a TikkieTikkie object if possible
      * @param {string} string 

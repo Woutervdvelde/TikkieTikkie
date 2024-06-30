@@ -26,6 +26,7 @@
             <img src="assets/image/logo-tikkietikkie.png" alt="tikkie" />
         </div>
         <div class="section-container">
+
             <div class="section">
                 <h2>What is your name?</h2>
                 <div class="name-input">
@@ -39,6 +40,7 @@
                     </button>
                 </div>
             </div>
+
             <div class="section">
                 <h2>What's the amount?</h2>
                 <div class="amount-input">
@@ -55,17 +57,24 @@
                     </button>
                 </div>
             </div>
+
             <div class="section">
                 <h2>What is it for?</h2>
                 <div class="description-input">
                     <textarea type="text" id="description" placeholder="E.g. Dinner" maxlength="35"></textarea>
                     <p class="max">35</p>
                 </div>
+                <div class="action-bar">
+                    <button disabled onclick="generateTikkieTikkie(TikkieTikkieType.COPY)" class="copy"><img src="assets/image/content-copy.svg"/> Copy</button>
+                    <button disabled onclick="generateTikkieTikkie(TikkieTikkieType.QR)" class="qr"><image src="assets/image/qr-code.svg"/></button>
+                    <button disabled onclick="generateTikkieTikkie(TikkieTikkieType.SHARE)" class="share"><image src="assets/image/ios-share.svg"/></button>
+                </div>
             </div>
         </div>
     </div>
-    <script src="scripts/data.js"></script>
+    <script src="scripts/utils.js"></script>
     <script src="scripts/encryption.js"></script>
+    <script src="scripts/data.js"></script>
     <script src="scripts/create.js"></script>
 </body>
 

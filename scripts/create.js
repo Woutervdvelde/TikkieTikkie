@@ -1,6 +1,10 @@
 const sections = Array.from(document.querySelectorAll(".section"));
 let currentSection = -1;
 
+const setButtonsEnabled = (buttons, value) => {
+    buttons.forEach(button => button.disabled = !value);
+}
+
 const nextSection = () => {
     if (currentSection < sections.length - 1) {
         let current = sections[currentSection];
@@ -10,8 +14,6 @@ const nextSection = () => {
         initInputCounter();
         initAmountListener();
         selectInput();
-    } else {
-        //done
     }
 }
 
@@ -31,7 +33,7 @@ const selectInput = () => {
 const initInputCounter = () => {
     const counter = sections[currentSection].querySelector(".max");
     const input = sections[currentSection].querySelector("textarea");
-    const nextButton = sections[currentSection].querySelector(".next");
+    const buttons = sections[currentSection].querySelectorAll("button");
     if (!counter || !input) return;
 
     const max = input.getAttribute("maxlength");
@@ -39,7 +41,7 @@ const initInputCounter = () => {
 
     input.addEventListener("input", () => {
         counter.textContent = max - input.value.length;
-        nextButton.disabled = !input.value > 0;
+        setButtonsEnabled(buttons, input.value.length > 0);
     });
 }
 
@@ -83,5 +85,23 @@ const initAmountListener = () => {
         }
     });
 }
+
+const generateTikkieTikkie = (type = TikkieTikkieType.COPY) => {
+    const name = document.getElementById("name").value;
+    const description = document.getElementById("description").value;
+    const amount = document.getElementById("amount").value;
+    const amountValue = amount == "Open amount" ? null : parseFloat(amount.replace(",", "."));
+
+    const tikkietikkie = new TikkieTikkie(name, description, amountValue);
+
+    console.log(tikkietikkie.generateUrl());
+}
+
+
+const TikkieTikkieType = Object.freeze({
+    COPY: "copy",
+    SHARE: "share",
+    QR: "qr",
+})
 
 nextSection();
