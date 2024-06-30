@@ -98,12 +98,28 @@ const generateTikkieTikkie = (type = TikkieTikkieType.COPY) => {
             coppyTikkieTikkie(tikkietikkie);
             break;
         case TikkieTikkieType.SHARE:
-            if (navigator.canShare()) navigator.share(tikkietikkie.getShareMessage());
-            else coppyTikkieTikkie(tikkietikkie);
+            shareTikkieTikkie(tikkietikkie);
             break;
         case TikkieTikkieType.QR:
             showQrModal(tikkietikkie.generateUrl());
             break;
+    }
+}
+
+const shareTikkieTikkie = (tikkietikkie) => {
+    if (navigator.share) {
+        navigator.share({
+            title: "TikkieTikkie",
+            text: tikkietikkie.getShareMessage(),
+            url: tikkietikkie.generateUrl()
+        })
+        .then(() => console.log("Successful share"))
+        .catch((error) => {
+            console.log("Error sharing", error);
+            coppyTikkieTikkie(tikkietikkie);
+        });
+    } else {
+        coppyTikkieTikkie(tikkietikkie);
     }
 }
 
