@@ -1,5 +1,3 @@
-# TikkieTikkie
-
 <div align="center">
     <img src="./assets/image/tikkietikkie.jpg">
 </div>
