@@ -7,3 +7,7 @@ const getBaseUrl = () => {
         return `${window.location.protocol}//${window.location.host}`;
     }
 }
+
+Array.from(document.querySelectorAll(".base-url")).forEach(element => {
+    element.href = getBaseUrl();
+});
