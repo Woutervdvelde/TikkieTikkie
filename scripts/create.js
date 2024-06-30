@@ -93,9 +93,25 @@ const generateTikkieTikkie = (type = TikkieTikkieType.COPY) => {
     const amountValue = amount == "Open amount" ? null : parseFloat(amount.replace(",", "."));
 
     const tikkietikkie = new TikkieTikkie(name, description, amountValue);
-
-    console.log(tikkietikkie.generateUrl());
+    switch (type) {
+        case TikkieTikkieType.COPY:
+            coppyTikkieTikkie(tikkietikkie);
+            break;
+        case TikkieTikkieType.SHARE:
+            if (navigator.canShare()) navigator.share(tikkietikkie.getShareMessage());
+            else coppyTikkieTikkie(tikkietikkie);
+            break;
+        case TikkieTikkieType.QR:
+            console.log("QR code not implemented yet");
+            break;
+    }
 }
+
+const coppyTikkieTikkie = (tikkietikkie) => {
+    if (!tikkietikkie) return;
+
+    navigator.clipboard.writeText(tikkietikkie.getShareMessage())
+};
 
 
 const TikkieTikkieType = Object.freeze({

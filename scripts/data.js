@@ -9,10 +9,16 @@ class TikkieTikkie {
         return JSON.stringify(this);
     }
 
+    // Generates the URL to the pay page with the data encoded in the URL
     generateUrl() {
         const data = encode(this.toString());
         const base = getBaseUrl();
         return `${base}/pay?data=${data}`;
+    }
+
+    getShareMessage() {
+        const url = this.generateUrl();
+        return `Please could you pay me for '${this.name}' at\n${url}\n\nThis link has no expiration date.`;
     }
 
     /**
