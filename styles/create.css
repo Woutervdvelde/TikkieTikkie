@@ -123,3 +123,42 @@ textarea::placeholder, input::placeholder {
     flex: 2 !important;
     gap: .5em;
 }
+
+.qrcode-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--main-width);
+    height: 100%;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    opacity: 0;
+    transition: all .3s ease 0s;
+    pointer-events: none;
+}
+
+.qrcode-modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.qr-container,
+.qrcode-modal #qrcode,
+.qrcode-modal #qrcode > * {
+    width: 100%;
+}
+
+
+.qr-container {
+    border-radius: 20px;
+    border: 10px solid var(--on-background);
+}
+
+.qrcode-modal #qrcode img {
+    image-rendering: pixelated;
+    border-radius: 10px;
+}

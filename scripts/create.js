@@ -102,7 +102,7 @@ const generateTikkieTikkie = (type = TikkieTikkieType.COPY) => {
             else coppyTikkieTikkie(tikkietikkie);
             break;
         case TikkieTikkieType.QR:
-            console.log("QR code not implemented yet");
+            showQrModal(tikkietikkie.generateUrl());
             break;
     }
 }
@@ -113,11 +113,28 @@ const coppyTikkieTikkie = (tikkietikkie) => {
     navigator.clipboard.writeText(tikkietikkie.getShareMessage())
 };
 
+const showQrModal = (link) => {
+    const modal = document.querySelector(".qrcode-modal");
+    var qrcode = new QRCode("qrcode", {
+        text: link,
+        width: 256,
+        height: 256,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
 
-const TikkieTikkieType = Object.freeze({
-    COPY: "copy",
-    SHARE: "share",
-    QR: "qr",
-})
+    modal.classList.add("active");
+}
+
+const hideQrModal = () => {
+    const modal = document.querySelector(".qrcode-modal");
+    modal.classList.remove("active");
+
+    // Wait for CSS animation to finish
+    setTimeout(() => {
+        modal.querySelector("#qrcode").innerHTML = "";
+    }, 300);
+}
 
 nextSection();

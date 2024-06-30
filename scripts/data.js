@@ -1,3 +1,9 @@
+const TikkieTikkieType = Object.freeze({
+    COPY: "copy",
+    SHARE: "share",
+    QR: "qr",
+})
+
 class TikkieTikkie {
     constructor(name, description, amount = false) {
         this.name = name;
@@ -18,7 +24,7 @@ class TikkieTikkie {
 
     getShareMessage() {
         const url = this.generateUrl();
-        return `Please could you pay me for '${this.name}' at\n${url}\n\nThis link has no expiration date.`;
+        return `Please could send me a Tikkie for '${this.description}' at\n${url}\n\nThis link has no expiration date.`;
     }
 
     /**
